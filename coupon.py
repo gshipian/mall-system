@@ -96,3 +96,4 @@ def payable(amount, coupon: Coupon, on: date | None = None) -> Decimal:
     """返回该订单使用此券后的实付金额（元）。"""
     order = Decimal(str(amount))
     return _round(order - discount(order, coupon, on))
+
