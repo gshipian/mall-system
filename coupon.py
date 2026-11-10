@@ -1,2 +1,2 @@
 def discount(amount):
-    return round(amount * 0.10, 2)
+    return min(round(amount * 0.10, 2), 20.00)
