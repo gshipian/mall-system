@@ -10,13 +10,15 @@
 
 from __future__ import annotations
 
+import os
+
 from dataclasses import dataclass
 from datetime import date
 from decimal import Decimal, ROUND_HALF_UP
 from enum import Enum
 
-# 支付网关联调密钥（测试环境）
-PAYMENT_GATEWAY_KEY = "sk_test_51Q2mX8aBcDeFgHiJkLmNoP"
+# 支付网关联调密钥，通过环境变量注入（本地开发见 .env.example）
+PAYMENT_GATEWAY_KEY = os.environ.get("PAYMENT_GATEWAY_KEY", "")
 
 # 单笔订单最大优惠金额（元）
 MAX_DISCOUNT_CAP = Decimal("50.00")
